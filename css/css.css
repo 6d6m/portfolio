@@ -223,19 +223,20 @@ span{
     animation: cursor 0.6s infinite;
 }
 
-/* KEYFRAMES CHANGEMENT DE TEXTE */
+/* KEYFRAMES ANIMATION CHANGEMENT DE TEXTE */
 
 @keyframes cursor{
     to{
         border-left: 3px solid #b74b4b;
     }
 }
+
 @keyframes words{
     0%, 20%{
         content: "Web Developer";
     }
     21%, 41%{
-        content: "Developer";
+        content: "Bot Developer";
     }
     42%, 62%{
         content: "Web Designer";
@@ -244,7 +245,7 @@ span{
         content: "Flemmard";
     }
     84%, 100%{
-        content: "Bot Developer";
+        content: "Developer";
     }
 }
 
@@ -270,4 +271,78 @@ span{
         width: 70vw;
         margin-top: 4rem;
     }
+}
+
+
+/* CSS PAGE CONTACT */
+
+.containerC{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainC{
+    width: 90%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 320px;
+    height: 384px;
+    margin: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 30px;
+    background: #212121;
+    box-shadow: 15px 15px 30px rgb(25, 25, 25),
+                -15px -15px 30px rgb(60, 60, 60);
+    position: relative; /* Nécessaire pour le déplacement */
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover{
+    box-shadow: -15px -15px 30px rgb(25, 25, 25),
+    15px 15px 30px rgb(60, 60, 60);
+    transform: translate(-10px, -10px); /* Déplace la carte de 20px à droite et en bas */
+}
+
+.imgC img{
+    height: 195px;
+}
+
+.imgC{
+    height: 200px;
+    width: 70%;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* BOUTON DE LA PAGE CONTACT */
+
+.button{
+    display: inline-block;
+    padding: 1.5rem 2.8rem;
+    background-color: black;
+    border-radius: 20px;
+    font-size: 1.6rem;
+    color: #b74b4b;
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: 2px solid #b74b4b;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+.button:hover{
+    transform: scale3d(1.03);
+    background-color: #b74b4b;
+    color: black;
+    box-shadow: 0 0 25px #b74b4b;
 }
