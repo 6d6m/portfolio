@@ -273,6 +273,13 @@ span{
     }
 }
 
+@media  (max-width: 1465    px){
+    .mainC{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
 
 /* CSS PAGE CONTACT */
 
@@ -280,10 +287,12 @@ span{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
+    width: 100%;
 }
 
 .mainC{
-    width: 90%;
+    width: 2000px;
     height: 70vh;
     display: flex;
     justify-content: center;
@@ -291,8 +300,8 @@ span{
 }
 
 .card {
-    width: 320px;
-    height: 384px;
+    width: 300px;
+    height: 385px;
     margin: 40px;
     display: flex;
     justify-content: center;
