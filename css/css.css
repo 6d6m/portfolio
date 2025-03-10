@@ -364,6 +364,7 @@ span{
     transition: 0.3s ease;
     cursor: pointer;
 }
+
 .button:hover{
     transform: scale3d(1.03);
     background-color: #b74b4b;
@@ -405,7 +406,6 @@ label {
 input, textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
 }
@@ -413,7 +413,7 @@ input, textarea {
 input:focus, textarea:focus {
     border-color: #b74b4b;
     outline: none;
-    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+    box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.8);
 }
 
 textarea {
@@ -441,3 +441,57 @@ button:hover {
     box-shadow: 0 0 25px #b74b4b;
 }
 
+/* EXPERIENCE */
+
+.xp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1400px;
+}
+
+.experience {
+    width: 1500px;
+    height: 1000px;
+    display: flex;
+    flex-wrap: wrap; /* Permet d'afficher les cartes sur plusieurs lignes si nécessaire */
+    justify-content: space-between; /* Espacement égal entre les cartes */
+    gap: 60px; /* Espace entre les cartes */
+    padding: 20px; /* Marge intérieure pour éviter que les cartes soient collées aux bords */
+}
+
+.imgC img {
+    width: 100%; /* L'image occupe toute la largeur de la carte */
+    height: auto; /* Ajuste la hauteur de l'image en fonction de la largeur */
+    object-fit: cover; /* Assure que l'image ne déforme pas */
+}
+
+.textexp h2 {
+    margin-top: 10px;
+    font-size: 26px;
+    color: #b74b4b;
+    text-align: center;
+}
+
+/* RESPONSIVE CARD XP */
+
+@media (max-width: 1200px) {
+    .experience {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1024px) {
+    .experience {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .experience {
+        width: 100%;
+        justify-content: center;
+    }
+}
