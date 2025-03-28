@@ -315,8 +315,8 @@ span{
 }
 
 .card {
-    width: 300px;
-    height: 385px;
+    width: 315px;
+    height: 420px;
     margin: 40px;
     display: flex;
     justify-content: center;
@@ -324,20 +324,28 @@ span{
     flex-direction: column;
     border-radius: 30px;
     background: #212121;
-    box-shadow: 15px 15px 30px rgb(25, 25, 25),
-                -15px -15px 30px rgb(60, 60, 60);
-    position: relative; /* Nécessaire pour le déplacement */
+    /* box-shadow: 15px 15px 30px rgb(25, 25, 25),
+                -15px -15px 30px rgb(60, 60, 60); */
+    position: relative;
     transition: transform 0.3s ease-in-out;
 }
 
-.card:hover{
+/* .card:hover{
     box-shadow: -15px -15px 30px rgb(25, 25, 25),
     15px 15px 30px rgb(60, 60, 60);
-    transform: translate(-10px, -10px); /* Déplace la carte de 20px à droite et en bas */
+    transform: translate(-10px, -10px);
+} */
+
+
+.card:hover {
+    box-shadow: 0px 0px 20px #b74b4b, /* Lumière rouge */
+                0px 0px 40px rgba(39, 8, 126, 0.5);
+    transform: translateY(-10px);
 }
 
+
 .imgC img{
-    height: 195px;
+    height: 80%;
 }
 
 .imgC{
