@@ -4,78 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="/css/css.css">
-    <title>Document</title>
 </head>
+
 <body>
 
-    <header>
-        <a href="/navbar/xxx.html" class="logo">6D6M</a>
+<header>
+    <a href="/navbar/xxx.html" class="logo">6D6M</a>
 
-        <nav>
-            <a href="/html.html">Menu</a>
-            <a href="/navbar/projets.html">Projets</a>
-            <a href="/navbar/experience.html">Experience</a>
-            <a href="#" class="active">Contact</a>
-        </nav>
-    </header>
+    <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </div>
 
+    <nav id="navbar">
+        <a href="/html.html">Menu</a>
+        <a href="/navbar/projets.html">Projets</a>
+        <a href="/navbar/experience.html">Experience</a>
+        <a href="#" class="active">Contact</a>
+    </nav>
+</header>
 
-    Mes contacts
+<main style="margin-top: 140px;">
+    <h1>Mes contacts</h1>
     <div class="containerC">
         <div class="mainC" id="cards-container"></div>
     </div>
+</main>
+
+<script>
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+    document.getElementById('navbar').classList.toggle('active');
+    });
+</script>
 
     <script src="/script/script2.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-    <!-- <section class="containerC">
-        <div class="mainC">
-            <div class="card">
-                <div class="imgC">
-                    <img src="/img/R.png" alt="LINKEDIN">
-                </div>
-                <a href="https://www.linkedin.com/in/adam-abbari-3b944a253?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="button"></i> Suivez-moi </a>                
-            </div>
-
-
-            <div class="card">
-                <div class="imgC">
-                    <img src="/img/github.svg" alt="GITHUB">
-                </div>
-                <a href="https://github.com/6d6m" class="button"></i> Suivez-moi </a> 
-            </div>
-
-
-            <div class="card">
-                <div class="imgC">
-                    <img src="/img/discord.svg" alt="DISCORD">
-                </div>
-                <a href="https://discord.gg/2stwrQyPwm" class="button">Rejoignez-moi</a> 
-            </div>
-
-
-            <div class="card">
-                <div class="imgC">
-                    <img src="/img/maildotru.svg" alt="EMAIL">
-                </div>
-                <a href="/form.html" class="button">Ecrivez-moi</a> 
-            </div>
-
-
-        </div>
-    </section> -->
-
-

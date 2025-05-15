@@ -6,30 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="/css/css.css">
-    <title>Document</title>
+<title>Projets</title>
+
+<style>
+    .travaux {
+        background-image: url(/img/error-glitch-gif-4.gif);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        min-height: 100vh;
+    }
+    </style>
+
 </head>
 <body>
 
-    <header>
-        <a href="/navbar/xxx.html" class="logo">6D6M</a>
+<header>
+    <a href="/navbar/xxx.html" class="logo">6D6M</a>
 
-        <nav>
-            <a href="/html.html">Menu</a>
-            <a href="#" class="active">Projets</a>
-            <a href="/navbar/experience.html">Experience</a>
-            <a href="/navbar/contact.html">Contact</a>
-        </nav>
-    </header>
+    <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </div>
 
-    <style>
-        .travaux{
-            background-image: url(/img/error-glitch-gif-4.gif);
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-        }
-    </style>
+    <nav id="navbar">
+        <a href="/html.html">Menu</a>
+        <a href="#" class="active">Projets</a>
+        <a href="/navbar/experience.html">Experience</a>
+        <a href="/navbar/contact.html">Contact</a>
+    </nav>
+</header>
 
-    <section class="travaux">
-        
-    </section>
+<section class="travaux"></section>
+
+    <script>
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+    document.getElementById('navbar').classList.toggle('active');
+    });
+
+    </script>
+</body>
+</html>

@@ -13,11 +13,13 @@
     font-family: 'Poppins', sans-serif;
 }
 
+
 /* HTML J'CROIS */
 
 html{
     font-size: 62.5%;
 }
+
 
 /* CSS BODY */
 
@@ -28,6 +30,7 @@ body{
     background-color: black;
     color: white;
 }
+
 
 /* CSS HEADER */
 
@@ -52,14 +55,16 @@ header{
 
 .logo{
     font-size: 3rem;
-    color: #b74b4b;
+    color: #800000;
     font-weight: 800;
     cursor: pointer;
     transition: 0.5s ease;
 }
+
 .logo:hover{
     transform: scale(1.1);
 }
+
 
 /* NAV + MEDIA QUERY NAV */
 
@@ -71,11 +76,12 @@ nav a{
     transition: 0.3s ease;
     border-bottom: 3px solid transparent;
 }
-nav a:hover,
-nav a.active{
-    color: #b74b4b;
-    border-bottom: 3px solid #b74b4b;
+
+nav a:hover, nav a.active{
+    color: #800000;
+    border-bottom: 3px solid #800000;
 }
+
 @media(max-width:995px){
     nav{
         position: absolute;
@@ -106,12 +112,14 @@ nav a.active{
     }
 }
 
+
 /* TAILLE DE LA PAGE */
 
 section{
     min-height: 100vh;
     padding: 5rem 9% 5rem;
 }
+
 
 /* STYLE PAGE + IMAGE */
 
@@ -154,6 +162,7 @@ span{
     font-weight: 500;
 }
 
+
 /* SOCIAL MEDIA */
 
 .social-icons a{
@@ -177,6 +186,7 @@ span{
     box-shadow: 0  0 25px #b74b4b;
 }
 
+
 /* BOUTTON + HOVER */
 
 .btn{
@@ -198,6 +208,7 @@ span{
     color: black;
     box-shadow: 0 0 25px #b74b4b;
 }
+
 
 /* ANIMATION CHANGEMENT DE TEXTE */
 
@@ -225,6 +236,7 @@ span{
     animation: cursor 0.6s infinite;
 }
 
+
 /* KEYFRAMES ANIMATION CHANGEMENT DE TEXTE */
 
 @keyframes cursor{
@@ -250,6 +262,7 @@ span{
         content: "Developer";
     }
 }
+
 
 /* RESPONSIVE PART */
 
@@ -282,6 +295,7 @@ span{
     }
 }
 
+
 /* NAV */
 
 @media (max-width: 995px) {
@@ -304,6 +318,7 @@ span{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 80px;
     width: 100%;
 }
 
@@ -327,12 +342,12 @@ span{
     justify-content: center;
     align-items: center;
     border-radius: 30px;
-    background: #1e1e1e;
+    background: #121212;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .card:hover {
-    box-shadow: 0px 0px 20px #8B0000;
+    box-shadow: 0 0 40px #cbcbcb;
     transform: translateY(-10px);
 }
 
@@ -342,7 +357,7 @@ span{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .imgC img {
@@ -355,31 +370,33 @@ span{
     color: white;
     font-size: 24px;
     margin: 0;
+    margin-bottom: 20px;
 }
 
 
 /* BOUTON DE LA PAGE CONTACT */
 
-.btnLien{
+.btnLien {
     display: inline-block;
     padding: 1.5rem 2.8rem;
-    background-color: black;
+    background-color: #1A1A1A;
     border-radius: 20px;
     font-size: 1.6rem;
-    color: #b74b4b;
+    color: #FFFFFF;
     letter-spacing: 0.3rem;
     font-weight: 600;
-    border: 2px solid #b74b4b;
+    border: 2px solid #800000;
     transition: 0.3s ease;
     cursor: pointer;
 }
 
-.btnLien:hover{
-    transform: scale3d(1.03);
-    background-color: #b74b4b;
-    color: black;
-    box-shadow: 0 0 25px #b74b4b;
+.btnLien:hover {
+    background-color: #800000;
+    color: #FFFFFF;
+    box-shadow: 0 0 20px rgba(169, 68, 68, 0.4);
+    transform: scale3d(1.03, 1.03, 1.03);
 }
+
 
 /* FORMULAIRE */
 
@@ -463,16 +480,16 @@ button:hover {
     width: 1500px;
     height: 1000px;
     display: flex;
-    flex-wrap: wrap; /* Permet d'afficher les cartes sur plusieurs lignes si nécessaire */
-    justify-content: space-between; /* Espacement égal entre les cartes */
-    gap: 60px; /* Espace entre les cartes */
-    padding: 20px; /* Marge intérieure pour éviter que les cartes soient collées aux bords */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 60px;
+    padding: 20px; 
 }
 
 .imgC img {
-    width: 100%; /* L'image occupe toute la largeur de la carte */
-    height: auto; /* Ajuste la hauteur de l'image en fonction de la largeur */
-    object-fit: cover; /* Assure que l'image ne déforme pas */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 .textexp h2 {
@@ -482,7 +499,7 @@ button:hover {
     text-align: center;
 }
 
-/* RESPONSIVE CARD XP */
+/* RESPONSIVE CARD */
 
 @media (max-width: 1200px) {
     .experience {
@@ -502,5 +519,44 @@ button:hover {
     .experience {
         width: 100%;
         justify-content: center;
+    }
+}
+
+/* MENU BURGER */
+
+/* Masquer le menu burger sur les grands écrans */
+.menu-toggle {
+    display: none;
+}
+
+/* Menu de navigation de base (desktop) */
+nav {
+    display: flex;
+    gap: 1rem;
+}
+
+@media (max-width: 995px) {
+    .menu-toggle {
+        display: block;
+        font-size: 2.5rem;
+        cursor: pointer;
+        color: white;
+        z-index: 1001;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        background-color: #111;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+        z-index: 1000;
+    }
+
+    nav.active {
+        display: flex;
     }
 }

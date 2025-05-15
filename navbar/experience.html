@@ -2,99 +2,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experience</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="/css/css.css">
-    <title>Document</title>
 </head>
 <body>
 
-    <header>
-        <a href="/navbar/xxx.html" class="logo">6D6M</a>
+<header>
+    <a href="/navbar/xxx.html" class="logo">6D6M</a>
 
-        <nav>
-            <a href="/html.html">Menu</a>
-            <a href="/navbar/projets.html">Projets</a>
-            <a href="#" class="active">Experience</a>
-            <a href="/navbar/contact.html">Contact</a>
-        </nav>
-    </header>
-
-    Mes langages de programmation
-    <div class="containerC">
-        <div class="mainC" id="cards-container"></div>
+    <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
     </div>
 
-        <script src="/script/script.js"></script>
-    </body>
-</html>
+    <nav id="navbar">
+        <a href="/html.html">Menu</a>
+        <a href="/navbar/projets.html">Projets</a>
+        <a href="/navbar/experience.html" class="active">Experience</a>
+        <a href="/navbar/contact.html">Contact</a>
+    </nav>
+</header>
 
-    <!-- <section class="xp">
-        <div class="experience">
-
-            <div class="card">
-                <div class="imgC">
-                    <img src="/img/html5.svg" alt="img">
-                </div>
-                <div class="textexp">
-                    <h2>HTML</h2>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="imgC">
-                    <img src="/img/css3.svg" alt="img">
-                </div>
-                <div class="textexp">
-                    <h2>CSS</h2>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="imgC">
-                    <img src="/img/python.svg" alt="img">
-                </div>
-                <div class="textexp">
-                    <h2>PYTHON</h2>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="imgC">
-                    <img src="/img/javascript.svg" alt="img">
-                </div>
-                <div class="textexp">
-                    <h2>JAVASCRIPT</h2>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="imgC">
-                    <img src="/img/wordpress.svg" alt="img">
-                </div>
-                <div class="textexp">
-                    <h2>WORDPRESS</h2>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="imgC">
-                    <img src="/img/mysql.svg" alt="img">
-                </div>
-                <div class="textexp">
-                    <h2>MySQL</h2>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="imgC">
-                    <img src="/img/php.svg" alt="img">
-                </div>
-                <div class="textexp">
-                    <h2>PHP</h2>
-                </div>
-            </div>
-
+    <main style="margin-top: 140px;">
+        <h1>Mes langages de programmation</h1>
+        <div class="containerC">
+        <div class="mainC" id="cards-container"></div>
         </div>
-    </section> -->
+    </main>
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+        document.getElementById('navbar').classList.toggle('active');
+        });
+    </script>
+
+    <script src="/script/script.js"></script>
+</body>
+</html>
