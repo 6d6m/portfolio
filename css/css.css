@@ -32,8 +32,8 @@ body{
 /* CSS HEADER */
 
 header{
-    margin-top: 20px;
     position: fixed;
+    height : 115px;
     top: 0;
     left: 0;
     width: 100%;
@@ -44,7 +44,9 @@ header{
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    backdrop-filter : blur(3px);
 }
+
 
 /* CSS LOGO + HOVER */
 
@@ -298,68 +300,67 @@ span{
 
 /* CSS PAGE CONTACT */
 
-.containerC{
+.containerC {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
     width: 100%;
 }
 
-.mainC{
-    width: 2000px;
-    height: 70vh;
+.mainC {
+    width: 90%;
+    max-width: 2000px;
+    min-height: 70vh;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    padding: 40px 0;
+    gap: 40px;
 }
 
 .card {
     width: 315px;
     height: 420px;
-    margin: 40px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     border-radius: 30px;
-    background: #212121;
-    /* box-shadow: 15px 15px 30px rgb(25, 25, 25),
-                -15px -15px 30px rgb(60, 60, 60); */
-    position: relative;
-    transition: transform 0.3s ease-in-out;
+    background: #1e1e1e;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* .card:hover{
-    box-shadow: -15px -15px 30px rgb(25, 25, 25),
-    15px 15px 30px rgb(60, 60, 60);
-    transform: translate(-10px, -10px);
-} */
-
-
 .card:hover {
-    box-shadow: 0px 0px 20px #b74b4b, /* Lumière rouge */
-                0px 0px 40px rgba(39, 8, 126, 0.5);
+    box-shadow: 0px 0px 20px #8B0000;
     transform: translateY(-10px);
 }
 
-
-.imgC img{
-    height: 80%;
-}
-
-.imgC{
-    height: 200px;
+.imgC {
     width: 70%;
-    margin-bottom: 40px;
+    height: 220px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 40px;
 }
+
+.imgC img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.card h3 {
+    color: white;
+    font-size: 24px;
+    margin: 0;
+}
+
 
 /* BOUTON DE LA PAGE CONTACT */
 
-.button{
+.btnLien{
     display: inline-block;
     padding: 1.5rem 2.8rem;
     background-color: black;
@@ -373,7 +374,7 @@ span{
     cursor: pointer;
 }
 
-.button:hover{
+.btnLien:hover{
     transform: scale3d(1.03);
     background-color: #b74b4b;
     color: black;
