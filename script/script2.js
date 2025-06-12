@@ -3,7 +3,7 @@ const contacts = [
     {nom : "Linkedin", logo : "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/linkedin.svg", lien  : "https://www.linkedin.com/in/adam-abbari-3b944a253?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app", color : "#0e76a8"},
     {nom : "Github", logo : "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/github.svg", lien  : "https://github.com/6d6m", color : "#181717"},
     {nom : "Discord", logo : "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/discord.svg", lien : "https://discordapp.com/users/1295383664351514626", color : "#5865F2"},
-    {nom : "Formulaire", logo : "", lien : "", color : "#000000"},
+    {nom : "Formulaire", logo : "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/mail.svg", lien : "/form.html", color : "#000000"},
 ]
 
 

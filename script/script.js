@@ -6,7 +6,9 @@ const langages = [
     {nom : "JavaScript", logo : "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/javascript.svg", color : "#F7DF1E"},
     {nom : "PHP", logo : "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/php.svg", color : "#777BB4"},
     {nom : "MySQL", logo : "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/mysql.svg", color : "#4479A1"},
+    {nom : "NoSQL", logo : "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/sqlite.svg", color : "#003B57"},
     {nom : "WordPress", logo : "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/wordpress.svg", color : "#21759B"},
+    {nom : "Symfony", logo : "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/symfony.svg", color : "#000000"},
 ];
 
 
