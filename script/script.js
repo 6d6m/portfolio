@@ -13,10 +13,8 @@ const langages = [
     { nom: "MySQL", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/mysql.svg", color: "#4479A1" },
     { nom: "NoSQL", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/sqlite.svg", color: "#003B57" },
     { nom: "WordPress", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/wordpress.svg", color: "#21759B" },
-    { nom: "Symfony", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/symfony.svg", color: "#000000" }
 ];
 
-// Fonction utilitaire pour traiter les SVG
 async function processSVG(logoUrl, color, fallbackAlt) {
     if (!logoUrl || !logoUrl.endsWith(".svg")) {
         return `<img src="${logoUrl}" alt="${fallbackAlt}" width="80" height="80" loading="lazy">`;
@@ -28,7 +26,6 @@ async function processSVG(logoUrl, color, fallbackAlt) {
         
         let svgText = await response.text();
         
-        // Optimisation du SVG
         svgText = svgText.replace(/<svg[^>]+/, match => {
             return match
                 .replace(/(width|height|fill)="[^"]*"/g, "")
@@ -42,7 +39,6 @@ async function processSVG(logoUrl, color, fallbackAlt) {
     }
 }
 
-// Fonction pour créer une carte de langage
 async function createLanguageCard(langage) {
     const card = document.createElement("div");
     card.className = "card";
@@ -60,7 +56,6 @@ async function createLanguageCard(langage) {
     return card;
 }
 
-// Initialisation
 document.addEventListener("DOMContentLoaded", async () => {
     const container = document.getElementById("cards-container");
     
@@ -70,11 +65,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     try {
-        // Créer toutes les cartes en parallèle pour de meilleures performances
         const cardPromises = langages.map(createLanguageCard);
         const cards = await Promise.all(cardPromises);
         
-        // Ajouter toutes les cartes au DOM en une fois
         cards.forEach(card => container.appendChild(card));
         
         console.log(`${langages.length} cartes de langages créées avec succès`);

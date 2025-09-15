@@ -31,7 +31,6 @@ const contacts = [
     }
 ];
 
-// Fonction utilitaire pour traiter les SVG
 async function processSVG(logoUrl, color, fallbackAlt) {
     if (!logoUrl || !logoUrl.endsWith(".svg")) {
         return `<img src="${logoUrl}" alt="${fallbackAlt}" width="80" height="80" loading="lazy">`;
@@ -43,7 +42,6 @@ async function processSVG(logoUrl, color, fallbackAlt) {
         
         let svgText = await response.text();
         
-        // Optimisation du SVG
         svgText = svgText.replace(/<svg[^>]+/, match => {
             return match
                 .replace(/(width|height|fill|style)="[^"]*"/g, "")
@@ -57,7 +55,6 @@ async function processSVG(logoUrl, color, fallbackAlt) {
     }
 }
 
-// Fonction pour créer une carte de contact
 async function createContactCard(contact) {
     const card = document.createElement("div");
     card.className = "card";
@@ -65,7 +62,6 @@ async function createContactCard(contact) {
 
     const logoHTML = await processSVG(contact.logo, contact.color, contact.nom);
 
-    // Validation du lien
     const isValidLink = contact.lien && contact.lien.trim() !== "";
     const linkHTML = isValidLink 
         ? `<a href="${contact.lien}" target="_blank" rel="noopener noreferrer" class="btnLien">Contacter</a>`
@@ -82,7 +78,6 @@ async function createContactCard(contact) {
     return card;
 }
 
-// Initialisation
 document.addEventListener("DOMContentLoaded", async () => {
     const container = document.getElementById("cards-container");
     
@@ -92,11 +87,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     try {
-        // Créer toutes les cartes en parallèle pour de meilleures performances
         const cardPromises = contacts.map(createContactCard);
         const cards = await Promise.all(cardPromises);
         
-        // Ajouter toutes les cartes au DOM en une fois
         cards.forEach(card => container.appendChild(card));
         
         console.log(`${contacts.length} cartes de contact créées avec succès`);

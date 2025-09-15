@@ -545,16 +545,16 @@ main {
 
 @keyframes words {
     0%, 24% {
-        content: "Full-Stack Dev";
+        content: "Dev Full-Stack";
     }
     25%, 49% {
-        content: "UI/UX Enthusiast";
+        content: "Amateur de design web";
     }
     50%, 74% {
-        content: "Bot Builder";
+        content: "Un Bot Builder";
     }
     75%, 100% {
-        content: "Gamer";
+        content: "Un Gamer";
     }
 }
 
