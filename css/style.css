@@ -458,6 +458,7 @@ nav a:hover, nav a.active{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     border-radius: 30px;
     background: #121212;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -477,7 +478,8 @@ nav a:hover, nav a.active{
     margin-bottom: 30px;
 }
 
-.imgC img {
+.imgC img,
+.imgC svg {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
@@ -488,6 +490,31 @@ nav a:hover, nav a.active{
     font-size: 24px;
     margin: 0;
     margin-bottom: 20px;
+}
+
+.contact-page .mainC {
+    gap: 30px;
+}
+
+.contact-page .card {
+    width: 260px;
+    height: 330px;
+}
+
+.contact-page .imgC {
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+.contact-page .card h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.contact-page .card[data-contact="linkedin"] .imgC svg,
+.contact-page .card[data-contact="github"] .imgC svg {
+    max-width: 86%;
+    max-height: 86%;
 }
 
 /* ========================================
@@ -503,34 +530,48 @@ main {
     padding: 0 2rem;
 }
 
-.xp {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 1400px;
-}
-
-.experience {
-    width: 1500px;
-    height: 1000px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 60px;
-    padding: 20px; 
-}
-
-.imgC img {
+.skills-container {
     width: 100%;
-    height: auto;
-    object-fit: cover;
+    max-width: 1400px;
+    margin: 40px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    padding: 0 20px 5rem;
 }
 
-.textexp h2 {
-    margin-top: 10px;
-    font-size: 26px;
+.skills-section {
+    min-height: auto;
+    padding: 0;
+}
+
+.skills-category {
+    font-size: 2.2rem;
     color: #b74b4b;
-    text-align: center;
+    margin-bottom: 24px;
+    padding-left: 16px;
+    border-left: 4px solid #800000;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 24px;
+}
+
+.skills-grid .card {
+    width: 100%;
+    height: 220px;
+}
+
+.skills-grid .imgC {
+    height: 110px;
+    margin-bottom: 16px;
+}
+
+.skills-grid .card h3 {
+    font-size: 18px;
+    margin-bottom: 0;
 }
 
 /* ========================================
@@ -647,24 +688,10 @@ main {
 }
 
 /* Responsive cards experience */
-@media (max-width: 1200px) {
-    .experience {
-        width: 100%;
-        justify-content: center;
-    }
-}
-
-@media (max-width: 1024px) {
-    .experience {
-        width: 100%;
-        justify-content: center;
-    }
-}
-
-@media (max-width: 767px) {
-    .experience {
-        width: 100%;
-        justify-content: center;
+@media (max-width: 480px) {
+    .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 16px;
     }
 }
 

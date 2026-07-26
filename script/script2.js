@@ -11,11 +11,11 @@ const contacts = [
         lien: "https://www.linkedin.com/in/adam-abbari-3b944a253?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app", 
         color: "#0e76a8" 
     },
-    { 
-        nom: "GitHub", 
-        logo: "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/github.svg", 
-        lien: "https://github.com/6d6m", 
-        color: "#181717" 
+    {
+        nom: "GitHub",
+        logo: "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/github.svg",
+        lien: "https://github.com/6d6m",
+        color: "#ffffff"
     },
     { 
         nom: "Discord", 
