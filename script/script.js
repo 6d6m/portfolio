@@ -27,7 +27,6 @@ const langages = [
     { nom: "Docker", categorie: "Outils", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/docker.svg", color: "#2496ED" }
 ];
 
-// Fonction utilitaire pour traiter les SVG
 async function processSVG(logoUrl, color, fallbackAlt) {
     if (!logoUrl || !logoUrl.endsWith(".svg")) {
         return `<img src="${logoUrl}" alt="${fallbackAlt}" width="80" height="80" loading="lazy">`;
@@ -39,7 +38,6 @@ async function processSVG(logoUrl, color, fallbackAlt) {
         
         let svgText = await response.text();
         
-        // Optimisation du SVG
         svgText = svgText.replace(/<svg[^>]+/, match => {
             return match
                 .replace(/(width|height|fill)="[^"]*"/g, "")
@@ -53,7 +51,6 @@ async function processSVG(logoUrl, color, fallbackAlt) {
     }
 }
 
-// Fonction pour créer une carte de langage
 async function createLanguageCard(langage) {
     const card = document.createElement("div");
     card.className = "card";
@@ -81,7 +78,6 @@ function groupByCategorie(items) {
     return groups;
 }
 
-// Initialisation
 document.addEventListener("DOMContentLoaded", async () => {
     const container = document.getElementById("cards-container");
 

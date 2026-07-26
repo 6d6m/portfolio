@@ -584,21 +584,18 @@ main {
     }
 }
 
-@keyframes words{
-    0%, 20%{
-        content: "Web Developer";
+@keyframes words {
+    0%, 24% {
+        content: "Dev Full-Stack";
     }
-    21%, 41%{
-        content: "Bot Developer";
+    25%, 49% {
+        content: "Amateur de design web";
     }
-    42%, 62%{
-        content: "Web Designer";
+    50%, 74% {
+        content: "Un Bot Builder";
     }
-    63%, 83%{
-        content: "Flemmard";
-    }
-    84%, 100%{
-        content: "Developer";
+    75%, 100% {
+        content: "Un Gamer";
     }
 }
 
