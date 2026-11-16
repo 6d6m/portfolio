@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,33 +12,29 @@
 <body>
 
 <header>
-    <a href="/navbar/xxx.html" class="logo">6D6M</a>
+    <a href="/index.html" class="logo">6D6M</a>
 
-    <div class="menu-toggle" id="menu-toggle">
-        <i class="fas fa-bars"></i>
+    <div class="menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navbar">
+        <i class="fa-solid fa-bars icon-bars"></i>
+        <i class="fa-solid fa-xmark icon-close"></i>
     </div>
 
     <nav id="navbar">
         <a href="/index.html">Menu</a>
         <a href="/navbar/projets.html">Projets</a>
         <a href="/navbar/experience.html">Experience</a>
-        <a href="#" class="active">Contact</a>
+        <a href="/navbar/contact.html" class="active">Contact</a>
     </nav>
 </header>
 
-<main class="contact-page" style="margin-top: 140px;">
+<main class="contact-page">
     <h2>Mes contacts</h2>
     <div class="containerC">
         <div class="mainC" id="cards-container"></div>
     </div>
 </main>
 
-<script>
-    document.getElementById('menu-toggle').addEventListener('click', function () {
-    document.getElementById('navbar').classList.toggle('active');
-    });
-</script>
-
+    <script src="/script/burger.js" defer></script>
     <script src="/script/script2.js"></script>
 </body>
 </html>

@@ -21,6 +21,7 @@
 
 html{
     font-size: 62.5%;
+    --header-h: 115px;
 }
 
 body{
@@ -40,10 +41,6 @@ section{
    TYPOGRAPHIE
 ======================================== */
 
-h1 span::before {
-    content: " ";
-}
-
 h2{
     display: flex;
     align-items: center;
@@ -59,31 +56,35 @@ span{
     color: #800000;
 }
 
-/* Animation de texte dynamique */
+/* Animation de texte dynamique
+   les 4 mots sont dans la même case de la grille : le bloc garde
+   la taille du plus long, donc rien ne bouge quand le mot change */
 .typing-text{
-    font-size: 34px;
     font-weight: 600;
-    min-width: 280px;
 }
 
-.typing-text span{
-    position: relative;
+.typing-text .mots{
+    display: inline-grid;
 }
 
-.typing-text span::before{
-    content: "software Developer";
-    color: #800000;
-    animation: words 20s infinite;
+.typing-text .mots span{
+    grid-area: 1 / 1;
+    visibility: hidden;
+    animation: mot 20s infinite;
 }
 
-.typing-text span::after{
+.typing-text .mots span:nth-child(2){ animation-delay: 5s; }
+.typing-text .mots span:nth-child(3){ animation-delay: 10s; }
+.typing-text .mots span:nth-child(4){ animation-delay: 15s; }
+
+/* curseur : barre de 3px qui ne prend pas de place dans la ligne */
+.typing-text .mots span::after{
     content: "";
-    background-color: black;
-    position: absolute;
-    width: calc(100% + 8px);
-    height: 100%;
+    display: inline-block;
+    height: 1.1em;
+    margin: 0 -5px 0 2px;
+    vertical-align: -0.2em;
     border-left: 3px solid black;
-    right: -8;
     animation: cursor 0.6s infinite;
 }
 
@@ -94,18 +95,19 @@ span{
 /* Header principal */
 header{
     position: fixed;
-    height : 115px;
+    height: var(--header-h);
     top: 0;
     left: 0;
     width: 100%;
     padding: 1rem 9%;
-    background-color: transparent;
-    filter: drop-shadow(10px);
+    /* fond quasi opaque : le contenu ne passe plus sous le logo au scroll */
+    background-color: rgba(0, 0, 0, 0.9);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    backdrop-filter : blur(3px);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
 }
 
 /* Logo */
@@ -164,9 +166,11 @@ nav a:hover, nav a.active{
         transition: transform 200ms ease;
     }
 
-    /* Micro-interaction: légère rotation au hover */
-    .menu-toggle:hover {
-        transform: rotate(5deg) scale(1.05);
+    /* seulement avec une souris, sinon l'icône reste penchée après le tap */
+    @media (hover: hover) {
+        .menu-toggle:hover {
+            transform: rotate(5deg) scale(1.05);
+        }
     }
 
     /* Icônes bars/croix avec transition améliorée */
@@ -200,7 +204,7 @@ nav a:hover, nav a.active{
         background: linear-gradient(135deg, rgba(15, 15, 15, 0.98), rgba(25, 25, 25, 0.95));
         backdrop-filter: blur(12px);
         position: fixed;
-        top: 100px;
+        top: calc(var(--header-h) + 8px);
         right: 1rem;
         left: 1rem;
         padding: 1.2rem 0;
@@ -280,12 +284,14 @@ nav a:hover, nav a.active{
     }
 
     /* Hover élégant avec effet de glow amélioré */
-    nav a:hover {
-        color: #ffffff;
-        background: linear-gradient(135deg, rgba(128, 0, 0, 0.9), rgba(183, 75, 75, 0.7));
-        transform: translateY(-3px) scale(1.02);
-        box-shadow: 0 12px 30px rgba(128, 0, 0, 0.5),
-                    0 0 0 1px rgba(128, 0, 0, 0.3);
+    @media (hover: hover) {
+        nav a:hover {
+            color: #ffffff;
+            background: linear-gradient(135deg, rgba(128, 0, 0, 0.9), rgba(183, 75, 75, 0.7));
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(128, 0, 0, 0.5),
+                        0 0 0 1px rgba(128, 0, 0, 0.3);
+        }
     }
 
     /* État actif plus subtil */
@@ -464,9 +470,11 @@ nav a:hover, nav a.active{
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.card:hover {
-    box-shadow: 0 0 40px #cbcbcb;
-    transform: translateY(-10px);
+@media (hover: hover) {
+    .card:hover {
+        box-shadow: 0 0 40px #cbcbcb;
+        transform: translateY(-10px);
+    }
 }
 
 .imgC {
@@ -528,6 +536,7 @@ main {
     align-items: center;
     width: 100%;
     padding: 0 2rem;
+    margin-top: 140px;
 }
 
 .skills-container {
@@ -569,6 +578,12 @@ main {
     margin-bottom: 16px;
 }
 
+/* le logo suivait la largeur de la carte et finissait sur le nom */
+.skills-grid .imgC svg {
+    max-width: min(100%, 14.5rem);
+    max-height: 14.5rem;
+}
+
 .skills-grid .card h3 {
     font-size: 18px;
     margin-bottom: 0;
@@ -584,19 +599,9 @@ main {
     }
 }
 
-@keyframes words {
-    0%, 24% {
-        content: "Dev Full-Stack";
-    }
-    25%, 49% {
-        content: "Amateur de design web";
-    }
-    50%, 74% {
-        content: "Un Bot Builder";
-    }
-    75%, 100% {
-        content: "Un Gamer";
-    }
+@keyframes mot {
+    0%, 24.99% { visibility: visible; }
+    25%, 100% { visibility: hidden; }
 }
 
 @keyframes slideInStagger {
@@ -631,6 +636,14 @@ main {
 ======================================== */
 
 /* Responsive général */
+
+/* petits laptops : "Amateur de design web" doit tenir sur une ligne */
+@media (max-width: 1150px){
+    .home .home-content h3{
+        font-size: 3.4rem;
+    }
+}
+
 @media (max-width: 1000px){
     .home{
         gap: 4rem;
@@ -638,19 +651,34 @@ main {
 }
 
 @media(max-width:995px){
+    html{
+        --header-h: 80px;
+    }
     .home{
         flex-direction: column;
-        margin: 5rem 4rem;
+        padding-top: calc(var(--header-h) + 3rem);
     }
     .home .home-content h3{
         font-size: 2.5rem;
     }
-    .home-content h1{
+    .home .home-content h1{
         font-size: 5rem;
     }
+    /* limitée en hauteur pour le paysage et les tablettes */
     .home-img img{
-        width: 70vw;
-        margin-top: 4rem;
+        width: min(70vw, 40rem, 45vh);
+    }
+    main{
+        margin-top: calc(var(--header-h) + 3rem);
+    }
+}
+
+@media (max-width: 480px){
+    .home .home-content h1{
+        font-size: 4rem;
+    }
+    .home .home-content h3{
+        font-size: min(2.5rem, 6.6vw);
     }
 }
 
@@ -664,7 +692,6 @@ main {
 /* Responsive pour très petits écrans */
 @media (max-width: 480px) {
     nav {
-        top: 90px;
         right: 0.5rem;
         left: 0.5rem;
         padding: 1rem 0;
@@ -684,10 +711,13 @@ main {
     }
 }
 
-/* Responsive cards experience */
+/* Responsive cards experience : toujours 2 colonnes sur téléphone */
 @media (max-width: 480px) {
+    .skills-container {
+        padding: 0 0 5rem;
+    }
     .skills-grid {
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
         gap: 16px;
     }
 }
@@ -695,42 +725,6 @@ main {
 /* ========================================
    THÈMES & ACCESSIBILITÉ
 ======================================== */
-
-/* Thème automatique sombre/clair */
-@media (prefers-color-scheme: light) {
-    @media (max-width: 995px) {
-        nav {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(245, 245, 245, 0.9));
-            border: 1px solid rgba(128, 0, 0, 0.2);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1), 
-                        0 0 0 1px rgba(0, 0, 0, 0.05);
-        }
-        
-        nav a {
-            color: #333;
-        }
-        
-        nav a:hover {
-            background: linear-gradient(135deg, rgba(128, 0, 0, 0.8), rgba(183, 75, 75, 0.6));
-            color: white;
-        }
-        
-        nav a.active {
-            background: rgba(128, 0, 0, 0.3);
-            color: #800000;
-        }
-    }
-}
-
-/* Optimisation mobile avancée - Safe Area pour iOS */
-@supports (padding: max(0px)) {
-    @media (max-width: 995px) {
-        nav {
-            top: max(100px, env(safe-area-inset-top) + 80px);
-            padding-bottom: max(1.2rem, env(safe-area-inset-bottom) + 0.5rem);
-        }
-    }
-}
 
 /* Optimisation performance: réduire backdrop-filter sur mobile */
 @media (max-width: 995px) and (prefers-reduced-motion: reduce) {

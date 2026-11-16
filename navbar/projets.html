@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -129,21 +129,27 @@
         .construction-subtitle { font-size: 1.4rem; }
         .progress-container { width: 250px; }
     }
+
+    /* écrans bas (téléphone en paysage) : le contenu passait sous le header */
+    @media (max-height: 600px) {
+        .travaux { padding-top: calc(var(--header-h) + 2rem); }
+    }
 </style>
 
 </head>
 <body>
 
 <header>
-    <a href="/navbar/xxx.html" class="logo">6D6M</a>
+    <a href="/index.html" class="logo">6D6M</a>
 
-    <div class="menu-toggle" id="menu-toggle">
-        <i class="fas fa-bars"></i>
+    <div class="menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navbar">
+        <i class="fa-solid fa-bars icon-bars"></i>
+        <i class="fa-solid fa-xmark icon-close"></i>
     </div>
 
     <nav id="navbar">
         <a href="/index.html">Menu</a>
-        <a href="#" class="active">Projets</a>
+        <a href="/navbar/projets.html" class="active">Projets</a>
         <a href="/navbar/experience.html">Experience</a>
         <a href="/navbar/contact.html">Contact</a>
     </nav>
@@ -178,11 +184,6 @@
     </div>
 </section>
 
-    <script>
-    document.getElementById('menu-toggle').addEventListener('click', function () {
-    document.getElementById('navbar').classList.toggle('active');
-    });
-
-    </script>
+    <script src="/script/burger.js" defer></script>
 </body>
 </html>

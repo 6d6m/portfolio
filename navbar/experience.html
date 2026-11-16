@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,10 +11,11 @@
 <body>
 
 <header>
-    <a href="/navbar/xxx.html" class="logo">6D6M</a>
+    <a href="/index.html" class="logo">6D6M</a>
 
-    <div class="menu-toggle" id="menu-toggle">
-        <i class="fas fa-bars"></i>
+    <div class="menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navbar">
+        <i class="fa-solid fa-bars icon-bars"></i>
+        <i class="fa-solid fa-xmark icon-close"></i>
     </div>
 
     <nav id="navbar">
@@ -25,17 +26,12 @@
     </nav>
 </header>
 
-    <main class="experience-page" style="margin-top: 140px;">
+    <main class="experience-page">
         <h2>Mes langages de programmation</h2>
         <div class="skills-container" id="cards-container"></div>
     </main>
 
-    <script>
-        document.getElementById('menu-toggle').addEventListener('click', function () {
-        document.getElementById('navbar').classList.toggle('active');
-        });
-    </script>
-
+    <script src="/script/burger.js" defer></script>
     <script src="/script/script.js"></script>
 </body>
 </html>
